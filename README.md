@@ -2,7 +2,7 @@
 
 A static, no-build-tools portfolio site (plain HTML/CSS/JS). Deploys straight to Vercel from Git.
 
-Repo: https://github.com/hamza030220/About_me
+Repo: https://github.com/Hamza140926/About_me
 
 
 ## Motion & interaction highlights
