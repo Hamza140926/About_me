@@ -19,3 +19,23 @@ Repo: https://github.com/Hamza140926/About_me
 ## Local development notes
 
 This folder is its own standalone Git repository — it is not nested inside any other project's version control. Run all `git` commands from inside `about_me/`.
+
+## Mobile overflow check (320px–430px)
+
+Use browser DevTools responsive mode at widths `320, 360, 375, 390, 412, 430` and run:
+
+```js
+const widths = [320, 360, 375, 390, 412, 430];
+const offenders = [...document.querySelectorAll('body *')].filter((el) => {
+  const r = el.getBoundingClientRect();
+  return r.right - document.documentElement.clientWidth > 1 || r.left < -1;
+});
+console.log({
+  clientWidth: document.documentElement.clientWidth,
+  scrollWidth: document.documentElement.scrollWidth,
+  overflowPx: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  offenders
+});
+```
+
+Expected result: `overflowPx <= 1` and no meaningful offending layout element.
